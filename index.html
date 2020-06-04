@@ -121,7 +121,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-user fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -175,7 +175,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/04/Vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Vim常用命令总结</a>
+            <a href="/2020/06/04/Vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Vim common commands</a>
         </h2>
 
         <div class="post-meta">
@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-04 14:04:50 / Modified: 14:16:03" itemprop="dateCreated datePublished" datetime="2020-06-04T14:04:50+08:00">2020-06-04</time>
+              <time title="Created: 2020-06-04 14:04:50 / Modified: 16:29:14" itemprop="dateCreated datePublished" datetime="2020-06-04T14:04:50+08:00">2020-06-04</time>
             </span>
 
           
@@ -200,7 +200,88 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>#sadf</p>
+          <h2 id="Getting-Vim-on-your-own-computer"><a href="#Getting-Vim-on-your-own-computer" class="headerlink" title="Getting Vim on your own computer"></a>Getting Vim on your own computer</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vim</span><br></pre></td></tr></table></figure>
+
+<h2 id="Opening-files"><a href="#Opening-files" class="headerlink" title="Opening files"></a>Opening files</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim example.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="Editing-files"><a href="#Editing-files" class="headerlink" title="Editing files"></a>Editing files</h2><p>press <code>i</code> to enter insert mode, and insert mode</p>
+<h2 id="Saving-files"><a href="#Saving-files" class="headerlink" title="Saving files"></a>Saving files</h2><p>enter command mode (press <code>:</code> after entering normal mode) and type <code>w</code></p>
+<h2 id="Closing-Vim"><a href="#Closing-Vim" class="headerlink" title="Closing Vim"></a>Closing Vim</h2><p>enter command mode and type <code>q</code></p>
+<h2 id="Different-modes"><a href="#Different-modes" class="headerlink" title="Different modes"></a>Different modes</h2><p><img src="https://cs61a.org/articles/assets/vim-modes.png" alt="Vim modes"></p>
+<h3 id="Normal-mode"><a href="#Normal-mode" class="headerlink" title="Normal mode"></a>Normal mode</h3><ul>
+<li>Every time you open Vim, you will start in normal mode.</li>
+<li>press <code>ESC</code> to enter normal mode</li>
+</ul>
+<h3 id="Insert-mode"><a href="#Insert-mode" class="headerlink" title="Insert mode"></a>Insert mode</h3><ul>
+<li>press <code>i</code> to enter insert mode, but more useful ways:</li>
+<li><code>i</code> : start inserting text where the cursor is</li>
+<li><code>a</code> : start inserting text right after the cursor</li>
+<li><code>I</code> : start inserting text at the beginning of the line</li>
+<li><code>A</code> : start inserting text at the end of the line</li>
+<li><code>o</code> : insert a new line after the current line and enter insert mode</li>
+</ul>
+<h3 id="Command-mode"><a href="#Command-mode" class="headerlink" title="Command mode"></a>Command mode</h3><ul>
+<li>press <code>:</code> to enter command mode</li>
+</ul>
+<h2 id="Navigating"><a href="#Navigating" class="headerlink" title="Navigating"></a>Navigating</h2><ul>
+<li><code>h</code> : left</li>
+<li><code>j</code> : down</li>
+<li><code>k</code> : up</li>
+<li><code>l</code> : right</li>
+<li>word:<ul>
+<li><code>w</code> : moves forward to the begging of the next word</li>
+<li><code>b</code> : move backward to the begging of the previous word</li>
+</ul>
+</li>
+<li>lines:<ul>
+<li><code>0</code> : moves to the begging of the line</li>
+<li><code>$</code> : moves to the end of the line</li>
+</ul>
+</li>
+<li>document:<ul>
+<li><code>gg</code> : moves to the top of the line</li>
+<li><code>G</code> : moves to the bottom of the file</li>
+</ul>
+</li>
+</ul>
+<h3 id="Visual-mode"><a href="#Visual-mode" class="headerlink" title="Visual mode"></a>Visual mode</h3><ul>
+<li>In this mode, you can highlight multiple letters or lines and manipulate them</li>
+<li><code>v</code> : enters regular visual mode</li>
+<li><code>V</code> : highlights entire lines at a time</li>
+<li>navigation : such as <code>hjkl</code>, <code>w</code></li>
+<li>deleting and yanking : <code>d</code> will delete all highlighted text; <code>y</code> will yank all highlighted text. Both then return to normal mode.</li>
+</ul>
+<h2 id="Undo-and-redo"><a href="#Undo-and-redo" class="headerlink" title="Undo and redo"></a>Undo and redo</h2><ul>
+<li><code>u</code> : enter normal mode an press <code>u</code> to undo, you can type multiple times</li>
+<li><code>Ctrl-r</code>: enter normal mode and press <code>Ctrl-r</code> to redo, multiple times too</li>
+</ul>
+<h2 id="Deleting-text"><a href="#Deleting-text" class="headerlink" title="Deleting text"></a>Deleting text</h2><p>The <code>x</code> command deletes a single character:</p>
+<ul>
+<li><code>x</code> deletes the character right underneath the cursor</li>
+<li><code>X</code> deletes the character right before the cursor</li>
+</ul>
+<p>Using <code>d</code> provides more flexibility and range:</p>
+<ul>
+<li><code>dd</code> deletes the entire line</li>
+<li><code>dw</code> deletes the rest of the current word, starting from the cursor</li>
+<li><code>D</code> deletes from the cursor to the end of the line</li>
+</ul>
+<h2 id="Copying-text"><a href="#Copying-text" class="headerlink" title="Copying text"></a>Copying text</h2><ul>
+<li><code>yy</code> : copy the entire line</li>
+<li><code>yw</code> : copy the rest of the current word, starting from the cursor</li>
+</ul>
+<h2 id="Pasting-text"><a href="#Pasting-text" class="headerlink" title="Pasting text"></a>Pasting text</h2><ul>
+<li><code>p</code> : pastes copied text right after cursor</li>
+<li><code>P</code> : pasted copied text right before cursor</li>
+</ul>
+<h2 id="Searching"><a href="#Searching" class="headerlink" title="Searching"></a>Searching</h2><ul>
+<li><code>/...</code> : <code>...</code> is a pattern, so that you can type anything you want to search <ul>
+<li><code>n</code> : moves forward through all matches</li>
+<li><code>N</code> : moves backwards through all matches</li>
+</ul>
+</li>
+<li><code>:42</code> : so you can jump to line 42</li>
+</ul>
 
       
     </div>
