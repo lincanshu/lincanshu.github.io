@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Lincanshu">
 <meta property="og:description" content="Dynamic Memory Management动态分区管理方式不将内存划分成几个区域，而把内存空间看作一个大的空闲区。当进程要求装入内存时，根据进程需要内存空间的大小查询内存各个空闲区，按首次适应，最佳适应或最坏适应算法，选择一个合适的空闲区，并按进程需求量划出一个分区装入该进程。 进程执行完成后，它所占用的内存分区被收回，成为一个空闲区。如果该空闲区的相邻分区也是空闲区，则需要将相邻空闲区合">
 <meta property="article:published_time" content="2020-06-06T09:42:25.000Z">
-<meta property="article:modified_time" content="2020-06-06T09:49:11.951Z">
+<meta property="article:modified_time" content="2020-06-06T09:59:54.062Z">
 <meta property="article:author" content="lincanshu">
 <meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary">
@@ -189,7 +189,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-06 17:42:25 / Modified: 17:49:11" itemprop="dateCreated datePublished" datetime="2020-06-06T17:42:25+08:00">2020-06-06</time>
+              <time title="Created: 2020-06-06 17:42:25 / Modified: 17:59:54" itemprop="dateCreated datePublished" datetime="2020-06-06T17:42:25+08:00">2020-06-06</time>
             </span>
 
           
@@ -207,18 +207,17 @@
 <p>进程执行完成后，它所占用的内存分区被收回，成为一个空闲区。如果该空闲区的相邻分区也是空闲区，则需要将相邻空闲区合并成一个空闲区。</p>
 <p>实现动态分区存储管理，主要需要解决以下问题：</p>
 <ul>
-<li><p>记录空闲区和内存分配区的数据结构Data Structure</p>
-</li>
-<li><p>动态内存分配算法Memory Allocate</p>
-</li>
-<li><p>动态内存回收算法Memory Free</p>
-</li>
+<li>记录空闲区和内存分配区的数据结构Data Structure</li>
+<li>动态内存分配算法Memory Allocate</li>
+<li>动态内存回收算法Memory Free</li>
 </ul>
+<a id="more"></a>
+
 <h2 id="空闲分区表"><a href="#空闲分区表" class="headerlink" title="空闲分区表"></a>空闲分区表</h2><p>空闲分区表主要记录内存现存的分区首址、大小等信息，定义如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> address;	<span class="comment">// 空闲分区首址</span></span><br><span class="line">	<span class="keyword">int</span> length;		<span class="comment">// 空闲分区长度</span></span><br><span class="line">&#125; freeAreaTable[MAXAREACOUNT];</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> address;	<span class="comment">// 空闲分区首址</span></span><br><span class="line">	<span class="keyword">int</span> length;	<span class="comment">// 空闲分区长度</span></span><br><span class="line">&#125; freeAreaTable[MAXAREACOUNT];</span><br></pre></td></tr></table></figure>
 
 <h2 id="进程内存分配表"><a href="#进程内存分配表" class="headerlink" title="进程内存分配表"></a>进程内存分配表</h2><p>内存分配表记录每个进程占用内存的情况，包括进程占用内存的首址、大小等信息，定义如下： </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">bool</span> exist;		<span class="comment">// 进程是否存在</span></span><br><span class="line">	<span class="keyword">int</span> address;	<span class="comment">// 进程占用内存首址</span></span><br><span class="line">	<span class="keyword">int</span> length;		<span class="comment">// 进程占用内存大小</span></span><br><span class="line">&#125; processTable[MAXPROCESSCOUNT];</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">bool</span> exist;	<span class="comment">// 进程是否存在</span></span><br><span class="line">	<span class="keyword">int</span> address;	<span class="comment">// 进程占用内存首址</span></span><br><span class="line">	<span class="keyword">int</span> length;	<span class="comment">// 进程占用内存大小</span></span><br><span class="line">&#125; processTable[MAXPROCESSCOUNT];</span><br></pre></td></tr></table></figure>
 
 <h2 id="动态内存分配算法"><a href="#动态内存分配算法" class="headerlink" title="动态内存分配算法"></a>动态内存分配算法</h2><p>Here are three most commonly used to select a free hole from the set of available hole.</p>
 <ul>
