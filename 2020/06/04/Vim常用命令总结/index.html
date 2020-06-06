@@ -28,7 +28,7 @@
 <meta property="og:description" content="Getting Vim on your own computer1sudo apt-get install vim  Opening files1vim example.txt  Editing filespress i to enter insert mode, and insert mode Saving filesenter command mode (press : after enter">
 <meta property="og:image" content="https://cs61a.org/articles/assets/vim-modes.png">
 <meta property="article:published_time" content="2020-06-04T06:04:50.000Z">
-<meta property="article:modified_time" content="2020-06-06T09:55:00.395Z">
+<meta property="article:modified_time" content="2020-06-06T10:06:13.349Z">
 <meta property="article:author" content="lincanshu">
 <meta property="article:tag" content="tool">
 <meta name="twitter:card" content="summary">
@@ -197,7 +197,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-06 17:55:00" itemprop="dateModified" datetime="2020-06-06T17:55:00+08:00">2020-06-06</time>
+                <time title="Modified: 2020-06-06 18:06:13" itemprop="dateModified" datetime="2020-06-06T18:06:13+08:00">2020-06-06</time>
               </span>
 
           
@@ -236,6 +236,13 @@
 <h3 id="Command-mode"><a href="#Command-mode" class="headerlink" title="Command mode"></a>Command mode</h3><ul>
 <li>press <code>:</code> to enter command mode</li>
 </ul>
+<h3 id="Visual-mode"><a href="#Visual-mode" class="headerlink" title="Visual mode"></a>Visual mode</h3><ul>
+<li>In this mode, you can highlight multiple letters or lines and manipulate them</li>
+<li><code>v</code> : enters regular visual mode</li>
+<li><code>V</code> : highlights entire lines at a time</li>
+<li>navigation : such as <code>hjkl</code>, <code>w</code></li>
+<li>deleting and yanking : <code>d</code> will delete all highlighted text; <code>y</code> will yank all highlighted text. Both then return to normal mode.</li>
+</ul>
 <h2 id="Navigating"><a href="#Navigating" class="headerlink" title="Navigating"></a>Navigating</h2><ul>
 <li><code>h</code> : left</li>
 <li><code>j</code> : down</li>
@@ -256,13 +263,6 @@
 <li><code>G</code> : moves to the bottom of the file</li>
 </ul>
 </li>
-</ul>
-<h3 id="Visual-mode"><a href="#Visual-mode" class="headerlink" title="Visual mode"></a>Visual mode</h3><ul>
-<li>In this mode, you can highlight multiple letters or lines and manipulate them</li>
-<li><code>v</code> : enters regular visual mode</li>
-<li><code>V</code> : highlights entire lines at a time</li>
-<li>navigation : such as <code>hjkl</code>, <code>w</code></li>
-<li>deleting and yanking : <code>d</code> will delete all highlighted text; <code>y</code> will yank all highlighted text. Both then return to normal mode.</li>
 </ul>
 <h2 id="Undo-and-redo"><a href="#Undo-and-redo" class="headerlink" title="Undo and redo"></a>Undo and redo</h2><ul>
 <li><code>u</code> : enter normal mode an press <code>u</code> to undo, you can type multiple times</li>
@@ -378,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Getting-Vim-on-your-own-computer"><span class="nav-number">1.</span> <span class="nav-text">Getting Vim on your own computer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Opening-files"><span class="nav-number">2.</span> <span class="nav-text">Opening files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editing-files"><span class="nav-number">3.</span> <span class="nav-text">Editing files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Saving-files"><span class="nav-number">4.</span> <span class="nav-text">Saving files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Closing-Vim"><span class="nav-number">5.</span> <span class="nav-text">Closing Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Different-modes"><span class="nav-number">6.</span> <span class="nav-text">Different modes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal-mode"><span class="nav-number">6.1.</span> <span class="nav-text">Normal mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-mode"><span class="nav-number">6.2.</span> <span class="nav-text">Insert mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-mode"><span class="nav-number">6.3.</span> <span class="nav-text">Command mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Navigating"><span class="nav-number">7.</span> <span class="nav-text">Navigating</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Visual-mode"><span class="nav-number">7.1.</span> <span class="nav-text">Visual mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undo-and-redo"><span class="nav-number">8.</span> <span class="nav-text">Undo and redo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deleting-text"><span class="nav-number">9.</span> <span class="nav-text">Deleting text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Copying-text"><span class="nav-number">10.</span> <span class="nav-text">Copying text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pasting-text"><span class="nav-number">11.</span> <span class="nav-text">Pasting text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Searching"><span class="nav-number">12.</span> <span class="nav-text">Searching</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Getting-Vim-on-your-own-computer"><span class="nav-number">1.</span> <span class="nav-text">Getting Vim on your own computer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Opening-files"><span class="nav-number">2.</span> <span class="nav-text">Opening files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editing-files"><span class="nav-number">3.</span> <span class="nav-text">Editing files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Saving-files"><span class="nav-number">4.</span> <span class="nav-text">Saving files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Closing-Vim"><span class="nav-number">5.</span> <span class="nav-text">Closing Vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Different-modes"><span class="nav-number">6.</span> <span class="nav-text">Different modes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal-mode"><span class="nav-number">6.1.</span> <span class="nav-text">Normal mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-mode"><span class="nav-number">6.2.</span> <span class="nav-text">Insert mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-mode"><span class="nav-number">6.3.</span> <span class="nav-text">Command mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visual-mode"><span class="nav-number">6.4.</span> <span class="nav-text">Visual mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Navigating"><span class="nav-number">7.</span> <span class="nav-text">Navigating</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undo-and-redo"><span class="nav-number">8.</span> <span class="nav-text">Undo and redo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deleting-text"><span class="nav-number">9.</span> <span class="nav-text">Deleting text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Copying-text"><span class="nav-number">10.</span> <span class="nav-text">Copying text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pasting-text"><span class="nav-number">11.</span> <span class="nav-text">Pasting text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Searching"><span class="nav-number">12.</span> <span class="nav-text">Searching</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
