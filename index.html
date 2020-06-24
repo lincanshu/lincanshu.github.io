@@ -175,7 +175,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/24/interrupt-experiment/" class="post-title-link" itemprop="url">LC3 interrupt</a>
+            <a href="/2020/06/24/interrupt-experiment/" class="post-title-link" itemprop="url">LC-3 interrupt</a>
         </h2>
 
         <div class="post-meta">
@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-24 17:07:06 / Modified: 17:19:52" itemprop="dateCreated datePublished" datetime="2020-06-24T17:07:06+08:00">2020-06-24</time>
+              <time title="Created: 2020-06-24 17:07:06 / Modified: 17:25:32" itemprop="dateCreated datePublished" datetime="2020-06-24T17:07:06+08:00">2020-06-24</time>
             </span>
 
           
@@ -202,7 +202,7 @@
       
           <h2 id="Interrupt-Concept"><a href="#Interrupt-Concept" class="headerlink" title="Interrupt Concept"></a>Interrupt Concept</h2><p>计算机领域中，中断就是由软硬件向处理器发送信号，处理器收到并立即处理该信号表示事件的过程。中断会暂停当前处理器正在执行的流程，然后将处理器切换到高优先级。处理器会暂存当前任务的状态，然后执行一小段称为<strong>中断处理程序</strong>(ISR)的代码来处理该事件。中断是暂时的，中断处理程序执行结束后，处理器会回到之前任务暂存的状态继续执行，中断分为两种类型：硬件中断和软件中断。</p>
 <h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><ul>
-<li>The program will output two lines such as below:</li>
+<li>The program will output two lines all the time such as below:</li>
 <li>If you type something, the program stops, until you type ENTER, then the program will output the character before ‘\n’ for ten times:</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS</span><br></pre></td></tr></table></figure>
