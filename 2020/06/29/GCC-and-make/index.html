@@ -20,29 +20,32 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Do more, know more, be more!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lincanshu">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="GCC and Make – the useful toolsCompile&#x2F;Link a Simple C Program - hello.c12345678&#x2F;&#x2F; hello.c#include &lt;stdio.h&gt;int main()&amp;#123;	printf(&quot;Hello, world\n&quot;);	return 0;&amp;#125;   use gcc to compile the he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GCC and make">
+<meta property="og:url" content="http://yoursite.com/2020/06/29/GCC-and-make/index.html">
 <meta property="og:site_name" content="Lincanshu">
-<meta property="og:description" content="Do more, know more, be more!">
+<meta property="og:description" content="GCC and Make – the useful toolsCompile&#x2F;Link a Simple C Program - hello.c12345678&#x2F;&#x2F; hello.c#include &lt;stdio.h&gt;int main()&amp;#123;	printf(&quot;Hello, world\n&quot;);	return 0;&amp;#125;   use gcc to compile the he">
+<meta property="article:published_time" content="2020-06-29T13:49:50.000Z">
+<meta property="article:modified_time" content="2020-06-29T15:31:06.757Z">
 <meta property="article:author" content="lincanshu">
+<meta property="article:tag" content="tools">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/06/29/GCC-and-make/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Lincanshu</title>
+  <title>GCC and make | Lincanshu</title>
   
 
 
@@ -155,9 +158,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -173,10 +177,9 @@
       <meta itemprop="name" content="Lincanshu">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/29/GCC-and-make/" class="post-title-link" itemprop="url">GCC and make</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          GCC and make
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -200,7 +203,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="GCC-and-Make-–-the-useful-tools"><a href="#GCC-and-Make-–-the-useful-tools" class="headerlink" title="GCC and Make – the useful tools"></a>GCC and Make – the useful tools</h1><h3 id="Compile-Link-a-Simple-C-Program-hello-c"><a href="#Compile-Link-a-Simple-C-Program-hello-c" class="headerlink" title="Compile/Link a Simple C Program - hello.c"></a>Compile/Link a Simple C Program - hello.c</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello, world\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="GCC-and-Make-–-the-useful-tools"><a href="#GCC-and-Make-–-the-useful-tools" class="headerlink" title="GCC and Make – the useful tools"></a>GCC and Make – the useful tools</h1><h3 id="Compile-Link-a-Simple-C-Program-hello-c"><a href="#Compile-Link-a-Simple-C-Program-hello-c" class="headerlink" title="Compile/Link a Simple C Program - hello.c"></a>Compile/Link a Simple C Program - hello.c</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello, world\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>use gcc to compile the hello.c:</li>
@@ -313,472 +316,33 @@
 <li>$?: the names of all prerequisites that are newer than the target, separated by spaces</li>
 </ul>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/tools/" rel="tag"># tools</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/24/interrupt-experiment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/24/interrupt-experiment/" class="post-title-link" itemprop="url">LC-3 interrupt</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-24 17:07:06" itemprop="dateCreated datePublished" datetime="2020-06-24T17:07:06+08:00">2020-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-27 19:03:00" itemprop="dateModified" datetime="2020-06-27T19:03:00+08:00">2020-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Interrupt-Concept"><a href="#Interrupt-Concept" class="headerlink" title="Interrupt Concept"></a>Interrupt Concept</h2><p>计算机领域中，中断就是由软硬件向处理器发送信号，处理器收到并立即处理该信号表示事件的过程。中断会暂停当前处理器正在执行的流程，然后将处理器切换到高优先级。处理器会暂存当前任务的状态，然后执行一小段称为<strong>中断处理程序</strong>(ISR)的代码来处理该事件。中断是暂时的，中断处理程序执行结束后，处理器会回到之前任务暂存的状态继续执行，中断分为两种类型：硬件中断和软件中断。</p>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><ul>
-<li>The program will output two lines all the time such as below:</li>
-<li>If you type something, the program stops, until you type ENTER, then the program will output the character before ‘\n’ for ten times:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/24/interrupt-experiment/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/13/something-to-say/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/13/something-to-say/" class="post-title-link" itemprop="url">Something to say</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-13 23:35:40" itemprop="dateCreated datePublished" datetime="2020-06-13T23:35:40+08:00">2020-06-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 15:54:14" itemprop="dateModified" datetime="2020-06-28T15:54:14+08:00">2020-06-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>A programmer progress fast without girlfriend.</li>
-<li>Less is more.</li>
-<li>Imagination is more important than knowledge.</li>
-<li>If you spend time learning to use tools, you will save even more time when writing and debugging code.</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/10/nim-little-game/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/10/nim-little-game/" class="post-title-link" itemprop="url">LC-3 Nim</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-10 22:26:23" itemprop="dateCreated datePublished" datetime="2020-06-10T22:26:23+08:00">2020-06-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-24 17:08:39" itemprop="dateModified" datetime="2020-06-24T17:08:39+08:00">2020-06-24</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="游戏背景："><a href="#游戏背景：" class="headerlink" title="游戏背景："></a>游戏背景：</h2><p>本次实验对Nim游戏做了一些小的改变，具体如下：游戏界面由三行组成，计数器类型为石子，其中A行包含3个石子，B行包含5个石子，C行包含8个石子。</p>
-<p>规则如下：</p>
-<ol>
-<li><p>每个玩家轮流从某一行中移除一个或多个石子。</p>
-</li>
-<li><p>一个玩家不能在一个回合中从多个行中移除石子。</p>
-</li>
-<li><p>当某个玩家从游戏界面上移除最后一个石子时，此时游戏结束，该玩家战败。</p>
-</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/10/nim-little-game/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/24/interrupt-experiment/" rel="prev" title="LC-3 interrupt">
+      <i class="fa fa-chevron-left"></i> LC-3 interrupt
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/06/dynamic-memory-allocation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/06/dynamic-memory-allocation/" class="post-title-link" itemprop="url">Dynamic memory allocation</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-06 17:42:25 / Modified: 17:59:54" itemprop="dateCreated datePublished" datetime="2020-06-06T17:42:25+08:00">2020-06-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Dynamic-Memory-Management"><a href="#Dynamic-Memory-Management" class="headerlink" title="Dynamic Memory Management"></a>Dynamic Memory Management</h2><p>动态分区管理方式不将内存划分成几个区域，而把内存空间看作一个大的空闲区。当进程要求装入内存时，根据进程需要内存空间的大小查询内存各个空闲区，按首次适应，最佳适应或最坏适应算法，选择一个合适的空闲区，并按进程需求量划出一个分区装入该进程。</p>
-<p>进程执行完成后，它所占用的内存分区被收回，成为一个空闲区。如果该空闲区的相邻分区也是空闲区，则需要将相邻空闲区合并成一个空闲区。</p>
-<p>实现动态分区存储管理，主要需要解决以下问题：</p>
-<ul>
-<li>记录空闲区和内存分配区的数据结构Data Structure</li>
-<li>动态内存分配算法Memory Allocate</li>
-<li>动态内存回收算法Memory Free</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/06/dynamic-memory-allocation/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/Vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/04/Vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Vim common commands</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-04 14:04:50" itemprop="dateCreated datePublished" datetime="2020-06-04T14:04:50+08:00">2020-06-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-29 11:43:16" itemprop="dateModified" datetime="2020-06-29T11:43:16+08:00">2020-06-29</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Getting-Vim-on-your-own-computer"><a href="#Getting-Vim-on-your-own-computer" class="headerlink" title="Getting Vim on your own computer"></a>Getting Vim on your own computer</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vim</span><br></pre></td></tr></table></figure>
-
-<h2 id="Opening-files"><a href="#Opening-files" class="headerlink" title="Opening files"></a>Opening files</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim example.txt</span><br></pre></td></tr></table></figure>
-
-<h2 id="Editing-files"><a href="#Editing-files" class="headerlink" title="Editing files"></a>Editing files</h2><p>press <code>i</code> to enter insert mode, and insert mode</p>
-<h2 id="Saving-files"><a href="#Saving-files" class="headerlink" title="Saving files"></a>Saving files</h2><p>enter command mode (press <code>:</code> after entering normal mode) and type <code>w</code></p>
-<h2 id="Closing-Vim"><a href="#Closing-Vim" class="headerlink" title="Closing Vim"></a>Closing Vim</h2><p>enter command mode and type <code>q</code></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/04/Vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/03/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-03 15:40:22" itemprop="dateCreated datePublished" datetime="2020-06-03T15:40:22+08:00">2020-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-06 17:58:06" itemprop="dateModified" datetime="2020-06-06T17:58:06+08:00">2020-06-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/03/hello-world/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -831,6 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GCC-and-Make-–-the-useful-tools"><span class="nav-number">1.</span> <span class="nav-text">GCC and Make – the useful tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compile-Link-a-Simple-C-Program-hello-c"><span class="nav-number">1.0.1.</span> <span class="nav-text">Compile&#x2F;Link a Simple C Program - hello.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compile-Link-a-Simple-C-Program-hello-cpp"><span class="nav-number">1.0.2.</span> <span class="nav-text">Compile&#x2F;Link a Simple C++ Program - hello.cpp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-GCC-Compiler-Options"><span class="nav-number">1.0.3.</span> <span class="nav-text">More GCC Compiler Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compile-and-Link-Separately"><span class="nav-number">1.0.4.</span> <span class="nav-text">Compile and Link Separately</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compile-and-Link-Multiple-Source-Files"><span class="nav-number">1.0.5.</span> <span class="nav-text">Compile and Link Multiple Source Files</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCC-Compilation-Process"><span class="nav-number">1.1.</span> <span class="nav-text">GCC Compilation Process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First-Makefile-By-Example"><span class="nav-number">1.1.1.</span> <span class="nav-text">First Makefile By Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-on-Makefile"><span class="nav-number">1.1.2.</span> <span class="nav-text">More on Makefile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Automatic-Variables"><span class="nav-number">1.1.3.</span> <span class="nav-text">Automatic Variables</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
