@@ -175,7 +175,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/29/GCC-and-make/" class="post-title-link" itemprop="url">GCC and make</a>
+            <a href="/2020/06/29/GCC-and-make/" class="post-title-link" itemprop="url">GCC and make -- the useful tools</a>
         </h2>
 
         <div class="post-meta">
@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-29 21:49:50 / Modified: 23:31:06" itemprop="dateCreated datePublished" datetime="2020-06-29T21:49:50+08:00">2020-06-29</time>
+              <time title="Created: 2020-06-29 21:49:50 / Modified: 23:33:54" itemprop="dateCreated datePublished" datetime="2020-06-29T21:49:50+08:00">2020-06-29</time>
             </span>
 
           
@@ -200,7 +200,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="GCC-and-Make-–-the-useful-tools"><a href="#GCC-and-Make-–-the-useful-tools" class="headerlink" title="GCC and Make – the useful tools"></a>GCC and Make – the useful tools</h1><h3 id="Compile-Link-a-Simple-C-Program-hello-c"><a href="#Compile-Link-a-Simple-C-Program-hello-c" class="headerlink" title="Compile/Link a Simple C Program - hello.c"></a>Compile/Link a Simple C Program - hello.c</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello, world\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h3 id="Compile-Link-a-Simple-C-Program-hello-c"><a href="#Compile-Link-a-Simple-C-Program-hello-c" class="headerlink" title="Compile/Link a Simple C Program - hello.c"></a>Compile/Link a Simple C Program - hello.c</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello, world\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>use gcc to compile the hello.c:</li>
@@ -216,103 +216,14 @@
 <li>To specify the output filename, use -o option:</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~&gt; gcc -o hello hello.c</span><br><span class="line">~&gt; chmod a+x hello</span><br><span class="line">~&gt; ./hello</span><br></pre></td></tr></table></figure>
-
-<h3 id="Compile-Link-a-Simple-C-Program-hello-cpp"><a href="#Compile-Link-a-Simple-C-Program-hello-cpp" class="headerlink" title="Compile/Link a Simple C++ Program - hello.cpp"></a>Compile/Link a Simple C++ Program - hello.cpp</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello, world!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>use g++ to compile C++ program, at the meanwhile use -o option to specify the output file name</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~&gt; g++ -o hello hello.cpp</span><br><span class="line">~&gt; chmod a+x hello</span><br><span class="line">~&gt; ./hello</span><br></pre></td></tr></table></figure>
-
-<h3 id="More-GCC-Compiler-Options"><a href="#More-GCC-Compiler-Options" class="headerlink" title="More GCC Compiler Options"></a>More GCC Compiler Options</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&gt; g++ -Wall -g -o Hello Hello.cpp</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>-o: specifies the output executable filename</li>
-<li>-Wall: prints “all” Warning messages</li>
-<li>-g: generates additional symbolic debugging information for use with gdb dubugger</li>
-</ul>
-<h3 id="Compile-and-Link-Separately"><a href="#Compile-and-Link-Separately" class="headerlink" title="Compile and Link Separately"></a>Compile and Link Separately</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Comile-only with -c option</span><br><span class="line">~&gt; g++ -c -Wall -g Hello.cpp</span><br><span class="line">// Link object file(s) into an executalbe</span><br><span class="line">~&gt; g++ -g -o Hello Hello.o</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>-c: Compile into objects file Hello.o. The object file has the same name as source file with extension of “.o” </li>
-<li>Linking is performed when the input file are object file “.o”.</li>
-</ul>
-<h3 id="Compile-and-Link-Multiple-Source-Files"><a href="#Compile-and-Link-Multiple-Source-Files" class="headerlink" title="Compile and Link Multiple Source Files"></a>Compile and Link Multiple Source Files</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// when has two source files: file1.cpp file2.cpp</span><br><span class="line">~&gt; g++ -o program file1.cpp file2.cpp</span><br><span class="line">// But often compile each of the souce files separately into object file, then link them together</span><br><span class="line">~&gt; g++ -c file1.cpp</span><br><span class="line">~&gt; g++ -c file2.cpp</span><br><span class="line">~&gt; g++ -o program file1.o file2.o</span><br></pre></td></tr></table></figure>
-
-<h2 id="GCC-Compilation-Process"><a href="#GCC-Compilation-Process" class="headerlink" title="GCC Compilation Process"></a>GCC Compilation Process</h2><p>![2020-06-29 222957](../Post-Asset-Folder/2020-06-29 222957.png)</p>
-<ol>
-<li>Pre-processor: GNU C Preprocessor (cpp), which includes the heads (#include) and expands the macros (#define)</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&gt; cpp hello.c &gt; hello.i</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Compilation: The compiler compiles the pre-processor source code into assembly code</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&gt; gcc -S hello.i</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>-S option specifies to produce assembly code, instead of object code</li>
-</ul>
-<ol start="3">
-<li>Assembly: The assembly converts the assembly code into machine code</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&gt; as -o hello.o hello.s</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Linker: Finally, the linker links the object code with the library code to produce an executable file</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&gt; ld -o hello hello.o ...libraries...</span><br></pre></td></tr></table></figure>
-
-<h3 id="First-Makefile-By-Example"><a href="#First-Makefile-By-Example" class="headerlink" title="First Makefile By Example"></a>First Makefile By Example</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello, world!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>start with the hello.c, then create a file named “makefile”, which rules to build the executable, and save in the same directory as the source file. (<strong>using “tab” NOT spaces</strong>)</li>
-</ul>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">all: hello</span></span><br><span class="line"></span><br><span class="line"><span class="section">hello: hello.o</span></span><br><span class="line">	gcc -o hello hello.o</span><br><span class="line">	</span><br><span class="line"><span class="section">hello.o: hello.c</span></span><br><span class="line">	gcc -c hello.c</span><br><span class="line">	</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm hello.o hello</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~&gt; make</span><br><span class="line">gcc -c hello.c</span><br><span class="line">gcc -o hello hello.o</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A makefile consists of a set of rules.</li>
-<li>A rule consists of 3 parts: a target, a list of pre-requisites and a command, like:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">target: pre-req-1 pre-req-2 ...</span><br><span class="line">		command</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>The target and pre-requisites are separated by a colon (:)</li>
-<li>The command must be preceded by a tab (NOT spaces)</li>
-<li>When make is asked to evaluate a rule, it begins by finding the files in the prerequisites</li>
-<li>If any of the prerequisites has an associated rule, make attempts to update those first</li>
-<li>More importantly, if the pre-requisite is not newer than the target, the command will not be run, like:</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~&gt; make</span><br><span class="line">make: Nothing to be done for 'all'.</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>We can specify the target to be made in the make command,  and run the make without target like:</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~&gt; make clean</span><br><span class="line">rm hello.c hello</span><br><span class="line"></span><br><span class="line">~&gt; make</span><br><span class="line">gcc -c hello.c</span><br><span class="line">gcc -o hello hello.o</span><br></pre></td></tr></table></figure>
-
-<h3 id="More-on-Makefile"><a href="#More-on-Makefile" class="headerlink" title="More on Makefile"></a>More on Makefile</h3><ul>
-<li>A <strong>comment</strong> begins with a # and lasts till the end of the line.</li>
-<li>Long line can be broken and continued in several lines via a back-slash().</li>
-<li>A general <strong>syntax</strong> for the rule is:</li>
-</ul>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">target1 [target2 ...]: [pre-req-1 pre-req-2 ...]</span><br><span class="line">	[command1</span><br><span class="line">	 command2</span><br><span class="line">	 ......]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>A target that does not represent a file is called a <strong>phony target</strong>.</li>
-<li>The standard phony targets are: all, clean, install</li>
-<li>A <strong>variable</strong> begins with a $ and is enclosed within parentheses (…) or braces {…}, like $(CC), $(CC_FLAGS), $@, $^</li>
-</ul>
-<h3 id="Automatic-Variables"><a href="#Automatic-Variables" class="headerlink" title="Automatic Variables"></a>Automatic Variables</h3><ul>
-<li>$@: the target filename</li>
-<li>$*: the target filename without the file extension</li>
-<li>$&lt;: the first prerequisite filename</li>
-<li>$^: the filenames of all the prerequisites, separated by spaces, discard duplicates</li>
-<li>$+: similar to $^, but includes duplicates</li>
-<li>$?: the names of all prerequisites that are newer than the target, separated by spaces</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/29/GCC-and-make/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
