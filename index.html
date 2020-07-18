@@ -161,6 +161,168 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/07/Mergesort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lincanshu">
+      <meta itemprop="description" content="Do more, know more, be more!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lincanshu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/07/Mergesort/" class="post-title-link" itemprop="url">Mergesort</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-07 15:06:01" itemprop="dateCreated datePublished" datetime="2020-07-07T15:06:01+08:00">2020-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-08 11:03:53" itemprop="dateModified" datetime="2020-07-08T11:03:53+08:00">2020-07-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Merging-Java-implementation"><a href="#Merging-Java-implementation" class="headerlink" title="Merging: Java implementation"></a>Merging: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(Comparable[] a, Comparable[] aux, <span class="keyword">int</span> lo, <span class="keyword">int</span> mid, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a, lo, mid)</span></span>;	<span class="comment">// precondition: a[lo..mid] sorted</span></span><br><span class="line">    <span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a, mid+<span class="number">1</span>, hi)</span></span>;	<span class="comment">// precondition: a[mid+1..hi] sorted</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k &lt;= hi; ++k)</span><br><span class="line">        aux[k] = a[k];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = lo, <span class="keyword">int</span> j = mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k &lt;= hi; ++k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> 		(i &gt; mid)			a[k] = aux[j++];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; hi) 			a[k] = aux[i++];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (less(a[i], a[j]))	a[k] = a[i++];</span><br><span class="line">        <span class="keyword">else</span>						a[k] = a[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(a, lo, hi)</span></span>;		<span class="comment">// postcondition: a[lo..hi] sorted</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/07/Mergesort/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/ElementarySorts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lincanshu">
+      <meta itemprop="description" content="Do more, know more, be more!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lincanshu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/06/ElementarySorts/" class="post-title-link" itemprop="url">ElementarySorts</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-06 18:06:39" itemprop="dateCreated datePublished" datetime="2020-07-06T18:06:39+08:00">2020-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-07 17:42:18" itemprop="dateModified" datetime="2020-07-07T17:42:18+08:00">2020-07-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Callbacks"><a href="#Callbacks" class="headerlink" title="Callbacks"></a>Callbacks</h3><p>Callback = reference to <strong>executable code</strong>.</p>
+<ul>
+<li>Client passes array of objects to sort() function.</li>
+<li>The sort() function calls back object’s compareTo() method as needed.</li>
+</ul>
+<h3 id="Implementing-the-Comparable-interface"><a href="#Implementing-the-Comparable-interface" class="headerlink" title="Implementing the Comparable interface"></a>Implementing the Comparable interface</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Date</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Date</span>&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> month, day, year;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Date</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> d, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        month = m;</span><br><span class="line">        day = d;</span><br><span class="line">        year = y;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Date that)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.year	&lt; that.year	) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.year	&gt; that.year	) <span class="keyword">return</span> +<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.month	&lt; that.month) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.month	&gt; that.month) <span class="keyword">return</span> +<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.day	&lt; that.day	) <span class="keyword">return</span> +<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.day	&gt; that.day	) <span class="keyword">return</span> +<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Two-useful-sorting-abstractions"><a href="#Two-useful-sorting-abstractions" class="headerlink" title="Two useful sorting abstractions"></a>Two useful sorting abstractions</h3><p>Helper function. Refer to data through compares and exchanges.</p>
+<ul>
+<li><strong>Less</strong>. Is item v less than w?</li>
+<li><strong>Exchange</strong>. Swap item in array a[] at index i with the on at index j.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Comparable swap = a[i];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = swap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; ++i)</span><br><span class="line">        <span class="keyword">if</span> (less(a[i], a[i-<span class="number">1</span>])) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Selection-sort-Java-implementation"><a href="#Selection-sort-Java-implementation" class="headerlink" title="Selection sort: Java implementation"></a>Selection sort: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Selection</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = a.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> min = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; N; ++j)</span><br><span class="line">                <span class="keyword">if</span> (less(a[j], a[min]))</span><br><span class="line">                    min = j;</span><br><span class="line">            exch(a, i, min);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Compable v, Compable w)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">/* as before */</span>	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Compable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">/* as before */</span>	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Insertion-sort-Java-implementation"><a href="#Insertion-sort-Java-implementation" class="headerlink" title="Insertion sort: Java implementation"></a>Insertion sort: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Insertion</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = a.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; --j)</span><br><span class="line">                <span class="keyword">if</span> (less(a[j], a[j-<span class="number">1</span>]))</span><br><span class="line">                    exch(a, j, j-<span class="number">1</span>);</span><br><span class="line">            	<span class="keyword">else</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">/* as before */</span>	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">/* as before */</span>	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Shellsort-Java-implementation"><a href="#Shellsort-Java-implementation" class="headerlink" title="Shellsort: Java implementation"></a>Shellsort: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Shell</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = a.length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> h = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (h &lt; N/<span class="number">3</span>) h = <span class="number">3</span>*h + <span class="number">1</span>; <span class="comment">// 1, 4, 13, 40, 121, 364, ...</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (h &gt;= <span class="number">1</span>) </span><br><span class="line">        &#123;	<span class="comment">// h-sort the array</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = h; i &lt; N; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;= h &amp;&amp; less(a[j], a[j-h]); j -= h)</span><br><span class="line">                    exch(a, j, j-h);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            h = h/<span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">/* as before */</span>	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">/* as before */</span>	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Knuth-shuffle"><a href="#Knuth-shuffle" class="headerlink" title="Knuth shuffle"></a>Knuth shuffle</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StdRandom</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shuffle</span><span class="params">(Object[] a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = a.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> r = StdRandom.uniform(i + <span class="number">1</span>);</span><br><span class="line">            exch(a, i, r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/05/BAGS-QUEUES-AND-STACKS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -256,10 +418,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-07-01 11:15:03 / Modified: 11:16:11" itemprop="dateCreated datePublished" datetime="2020-07-01T11:15:03+08:00">2020-07-01</time>
+              <time title="Created: 2020-07-01 11:15:03" itemprop="dateCreated datePublished" datetime="2020-07-01T11:15:03+08:00">2020-07-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-10 10:48:42" itemprop="dateModified" datetime="2020-07-10T10:48:42+08:00">2020-07-10</time>
+              </span>
 
           
 
@@ -272,7 +440,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="给定-int-RandomA-，-生成一个随机数-1-5-每个数的概率-0-2实现-int-RandomB-范围为-1-25-每个数概率为-0-04"><a href="#给定-int-RandomA-，-生成一个随机数-1-5-每个数的概率-0-2实现-int-RandomB-范围为-1-25-每个数概率为-0-04" class="headerlink" title="给定 int RandomA()， 生成一个随机数 1-5. 每个数的概率 0.2实现 int RandomB(), 范围为 1-25. 每个数概率为 0.04"></a>给定 int RandomA()， 生成一个随机数 1-5. 每个数的概率 0.2实现 int RandomB(), 范围为 1-25. 每个数概率为 0.04</h3><h3 id="二叉树中序遍历递归-非递归"><a href="#二叉树中序遍历递归-非递归" class="headerlink" title="二叉树中序遍历递归+非递归"></a>二叉树中序遍历递归+非递归</h3><h3 id="链表的入环节点"><a href="#链表的入环节点" class="headerlink" title="链表的入环节点"></a>链表的入环节点</h3><h3 id="二维数组查找指定数字，时间复杂度-O-m-n"><a href="#二维数组查找指定数字，时间复杂度-O-m-n" class="headerlink" title="二维数组查找指定数字，时间复杂度 O(m+n)"></a>二维数组查找指定数字，时间复杂度 O(m+n)</h3><h3 id="链表倒数第-K-个数"><a href="#链表倒数第-K-个数" class="headerlink" title="链表倒数第 K 个数"></a>链表倒数第 K 个数</h3><h3 id="动态规划-连续子数组最大和"><a href="#动态规划-连续子数组最大和" class="headerlink" title="动态规划:连续子数组最大和"></a>动态规划:连续子数组最大和</h3><h3 id="LFU-的如何实现"><a href="#LFU-的如何实现" class="headerlink" title="LFU 的如何实现"></a>LFU 的如何实现</h3>
+          <h3 id="给定-int-RandomA-，-生成一个随机数-1-5-每个数的概率-0-2实现-int-RandomB-范围为-1-25-每个数概率为-0-04"><a href="#给定-int-RandomA-，-生成一个随机数-1-5-每个数的概率-0-2实现-int-RandomB-范围为-1-25-每个数概率为-0-04" class="headerlink" title="给定 int RandomA()， 生成一个随机数 1-5. 每个数的概率 0.2实现 int RandomB(), 范围为 1-25. 每个数概率为 0.04"></a>给定 int RandomA()， 生成一个随机数 1-5. 每个数的概率 0.2实现 int RandomB(), 范围为 1-25. 每个数概率为 0.04</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">RandomB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">5</span>*(RandomA() - <span class="number">1</span>) + RandomA();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二叉树中序遍历递归-非递归"><a href="#二叉树中序遍历递归-非递归" class="headerlink" title="二叉树中序遍历递归+非递归"></a>二叉树中序遍历递归+非递归</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	Recursive Approach</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        helper(root, res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode root, List&lt;Integer&gt; res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        helper(root.left, res);</span><br><span class="line">        res.add(root.val);</span><br><span class="line">        helper(root.right, res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	Iterative Approach</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        TreeNode cur = root;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span> || !stack.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">while</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(cur);</span><br><span class="line">                cur = cur.left;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = stack.pop();</span><br><span class="line">            res.add(cur.val);</span><br><span class="line">            cur = cur.right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="链表的入环节点"><a href="#链表的入环节点" class="headerlink" title="链表的入环节点"></a>链表的入环节点</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">detectCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode low = head, fast = head;</span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            low = low.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            <span class="keyword">if</span> (low == fast) &#123;</span><br><span class="line">                <span class="keyword">while</span> (head != fast) &#123;</span><br><span class="line">                    head = head.next;</span><br><span class="line">                    fast = fast.next;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> head;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二维数组查找指定数字"><a href="#二维数组查找指定数字" class="headerlink" title="二维数组查找指定数字"></a>二维数组查找指定数字</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">searchMatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = matrix[<span class="number">0</span>].length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; i &lt; matrix.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][j] &lt; target) i++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (matrix[i][j] &gt; target) j--;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="链表倒数第-K-个数"><a href="#链表倒数第-K-个数" class="headerlink" title="链表倒数第 K 个数"></a>链表倒数第 K 个数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>, head);</span><br><span class="line">        ListNode slow = newHead, fast = head;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) fast = fast.next;</span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span>) &#123;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next;</span><br><span class="line">        &#125;</span><br><span class="line">        slow.next = slow.next.next;</span><br><span class="line">        <span class="keyword">return</span> newHead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="连续子数组最大和"><a href="#连续子数组最大和" class="headerlink" title="连续子数组最大和"></a>连续子数组最大和</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = nums[<span class="number">0</span>], sum = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">            sum = Math.max(sum + nums[i], sum);</span><br><span class="line">            max = Math.max(max, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="LFU-的如何实现"><a href="#LFU-的如何实现" class="headerlink" title="LFU 的如何实现"></a>LFU 的如何实现</h3>
       
     </div>
 
@@ -452,7 +632,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 09:42:38" itemprop="dateModified" datetime="2020-07-06T09:42:38+08:00">2020-07-06</time>
+                <time title="Modified: 2020-07-10 16:43:25" itemprop="dateModified" datetime="2020-07-10T16:43:25+08:00">2020-07-10</time>
               </span>
 
           
@@ -494,7 +674,67 @@
 <li>Overloading is a term used to describe when two methods have the same name but differ in the type or number of arguments.</li>
 <li>Overrding, however, occurs when a method shares the same name and function signature as another mehod in its super class.</li>
 </ul>
-<h3 id="HashMap-底层数据结构-扩容机制，与-ConcurrentHashMap-区别"><a href="#HashMap-底层数据结构-扩容机制，与-ConcurrentHashMap-区别" class="headerlink" title="HashMap 底层数据结构+扩容机制，与 ConcurrentHashMap 区别"></a>HashMap 底层数据结构+扩容机制，与 ConcurrentHashMap 区别</h3><h3 id="JVM启动过程？验证"><a href="#JVM启动过程？验证" class="headerlink" title="JVM启动过程？验证"></a>JVM启动过程？验证</h3><h3 id="wait和notify的基本原理？为什么是Object-wait"><a href="#wait和notify的基本原理？为什么是Object-wait" class="headerlink" title="wait和notify的基本原理？为什么是Object.wait?"></a>wait和notify的基本原理？为什么是Object.wait?</h3><h3 id="常见的同步方式？synchronized-CAS"><a href="#常见的同步方式？synchronized-CAS" class="headerlink" title="常见的同步方式？synchronized/CAS"></a>常见的同步方式？synchronized/CAS</h3><h3 id="线程池的创建方式？区别"><a href="#线程池的创建方式？区别" class="headerlink" title="线程池的创建方式？区别"></a>线程池的创建方式？区别</h3><h3 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h3><h3 id="反序列和序列化，为什么要，什么情况下要"><a href="#反序列和序列化，为什么要，什么情况下要" class="headerlink" title="反序列和序列化，为什么要，什么情况下要"></a>反序列和序列化，为什么要，什么情况下要</h3><h3 id="反射，为什么要，什么时候用，缺点"><a href="#反射，为什么要，什么时候用，缺点" class="headerlink" title="反射，为什么要，什么时候用，缺点"></a>反射，为什么要，什么时候用，缺点</h3><h3 id="Hashcode为什么出现、是什么、equals关系"><a href="#Hashcode为什么出现、是什么、equals关系" class="headerlink" title="Hashcode为什么出现、是什么、equals关系"></a>Hashcode为什么出现、是什么、equals关系</h3><h3 id="final，finalize，-finally-有什么区别"><a href="#final，finalize，-finally-有什么区别" class="headerlink" title="final，finalize， finally 有什么区别"></a>final，finalize， finally 有什么区别</h3><h3 id="Sychronized-关键字"><a href="#Sychronized-关键字" class="headerlink" title="Sychronized 关键字"></a>Sychronized 关键字</h3><h3 id="设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计"><a href="#设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计" class="headerlink" title="设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计"></a>设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计</h3><h3 id="列举常用的数据结构，数组链表区别，队列和栈的区别-存储的方式从的物理上和逻辑上说，还有增删改查的时间复杂度"><a href="#列举常用的数据结构，数组链表区别，队列和栈的区别-存储的方式从的物理上和逻辑上说，还有增删改查的时间复杂度" class="headerlink" title="列举常用的数据结构，数组链表区别，队列和栈的区别(存储的方式从的物理上和逻辑上说，还有增删改查的时间复杂度)"></a>列举常用的数据结构，数组链表区别，队列和栈的区别(存储的方式从的物理上和逻辑上说，还有增删改查的时间复杂度)</h3><h3 id="反射-泛型底层是怎么实现的"><a href="#反射-泛型底层是怎么实现的" class="headerlink" title="反射+泛型底层是怎么实现的"></a>反射+泛型底层是怎么实现的</h3><h3 id="静态内部类，匿名内部类"><a href="#静态内部类，匿名内部类" class="headerlink" title="静态内部类，匿名内部类"></a>静态内部类，匿名内部类</h3><h3 id="封装，继承，多态"><a href="#封装，继承，多态" class="headerlink" title="封装，继承，多态"></a>封装，继承，多态</h3><h3 id="Spring-中-ioc-的工厂模式"><a href="#Spring-中-ioc-的工厂模式" class="headerlink" title="Spring 中 ioc 的工厂模式"></a>Spring 中 ioc 的工厂模式</h3><h3 id="Sychronized-和-Volitile-关键字，在一个情境下选择哪个"><a href="#Sychronized-和-Volitile-关键字，在一个情境下选择哪个" class="headerlink" title="Sychronized 和 Volitile 关键字，在一个情境下选择哪个"></a>Sychronized 和 Volitile 关键字，在一个情境下选择哪个</h3><h3 id="多态，书写一个多态的例子，多态具体情况判断"><a href="#多态，书写一个多态的例子，多态具体情况判断" class="headerlink" title="多态，书写一个多态的例子，多态具体情况判断"></a>多态，书写一个多态的例子，多态具体情况判断</h3><h3 id="异常具体情况判断"><a href="#异常具体情况判断" class="headerlink" title="异常具体情况判断"></a>异常具体情况判断</h3><h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3>
+<h3 id="What-is-the-difference-between-final-finally-and-finalize"><a href="#What-is-the-difference-between-final-finally-and-finalize" class="headerlink" title="What is the difference between final, finally, and finalize?"></a>What is the difference between final, finally, and finalize?</h3><p>Despite their similar souding names, final, finally and finalize have very different purpose. To speak in very general terms, final is used to control whether a variable, method, or class is “changeable.” The finally keyword is used in try/catch block to ensure that <strong>a segment of code is always executed</strong>. The finalize() method is called by the garbage collector once it determines that no more reference exist.</p>
+<h3 id="Explain-what-object-reflection-is-in-Java-and-why-it-is-useful"><a href="#Explain-what-object-reflection-is-in-Java-and-why-it-is-useful" class="headerlink" title="Explain what object reflection is in Java and why it is useful"></a>Explain what object reflection is in Java and why it is useful</h3><p>Object Reflection is a feature in Java that provides a way to get reflective information about Java classes and objects, and perform operations such as:</p>
+<ul>
+<li>Getting information about the methods and fields persent inside the class at runtime.</li>
+<li>Creating a new instance of a class.</li>
+<li>Getting and setting the object fields directly by getting field reference, regardless of what the access modifier is.</li>
+</ul>
+<h3 id="Why-is-Object-Reflection-is-useful"><a href="#Why-is-Object-Reflection-is-useful" class="headerlink" title="Why is Object Reflection is useful?"></a>Why is Object Reflection is useful?</h3><ul>
+<li>It can help you observe or manipulate the runtime behavior of applications</li>
+<li>It can help you debug or test programs, as you have direct access to methods, constructors, and fields</li>
+<li>You can call methods by name when you don’t know the method in advance. For example, we may let the user pass in a class name, parameters for the constructor, and a method name. We can then use this information to create an object and call a method. Doing these operations without reflection would require a complex series of if-statements, if it’s possible at all.</li>
+</ul>
+<h3 id="JVM-Architecture"><a href="#JVM-Architecture" class="headerlink" title="JVM Architecture"></a>JVM Architecture</h3><h4 id="Classloader"><a href="#Classloader" class="headerlink" title="Classloader"></a>Classloader</h4><p>When we compile a Java Class, JVM creates the bytecode, which is platform and machine-independent. The bytecode is stored in .class file. When we try to use a class, the ClassLoader loads it into the memory.</p>
+<h4 id="Method-Area"><a href="#Method-Area" class="headerlink" title="Method Area"></a>Method Area</h4><p>Method Area stores per-class structures such as the runtime constant pool, field and method date, the code for methods.</p>
+<h4 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h4><p>It is the runtime data area in which objects are allocated.</p>
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h4><ul>
+<li>Java Stack stores frames. It holds local variables and partial results, and plays a part in method invocation and return.</li>
+<li>Each thread has a private JVM stack, created at the same time as thread.</li>
+<li>A new frame is created each time a method is invoked. A frame is destroyed when its method invocation completes.</li>
+</ul>
+<h4 id="Program-Counter-Register"><a href="#Program-Counter-Register" class="headerlink" title="Program Counter Register"></a>Program Counter Register</h4><p>PC register contains the address of the Java virtual machine <strong>instruction currently being executed</strong>.</p>
+<h4 id="Native-Method-Stack"><a href="#Native-Method-Stack" class="headerlink" title="Native Method Stack"></a>Native Method Stack</h4><p>It contains all the native methods use in the application.</p>
+<h4 id="Execution-Engine"><a href="#Execution-Engine" class="headerlink" title="Execution Engine"></a>Execution Engine</h4><ul>
+<li><strong>A virtual processor</strong></li>
+<li><strong>Interpreter</strong>:  Read bytecode stream then execute the instructions.</li>
+<li><strong>Just-In-Time(JIT) compiler</strong>: It is used to <strong>improve the performance</strong>. JIT compiles parts of the byte code that have similar functionality at the same time, and hence reduces the amount of time needed for compilation. Here, the term “compiler” refers to a translator from the instruction set of a JVM to the instruction set of a specific CPU.</li>
+</ul>
+<h3 id="HashMap-底层数据结构-扩容机制，与-ConcurrentHashMap-区别"><a href="#HashMap-底层数据结构-扩容机制，与-ConcurrentHashMap-区别" class="headerlink" title="HashMap 底层数据结构+扩容机制，与 ConcurrentHashMap 区别"></a>HashMap 底层数据结构+扩容机制，与 ConcurrentHashMap 区别</h3><h3 id="JVM启动过程？验证"><a href="#JVM启动过程？验证" class="headerlink" title="JVM启动过程？验证"></a>JVM启动过程？验证</h3><h3 id="What-is-wait-notify-and-nofifyAll-method"><a href="#What-is-wait-notify-and-nofifyAll-method" class="headerlink" title="What is wait(), notify() and nofifyAll() method?"></a>What is wait(), notify() and nofifyAll() method?</h3><ul>
+<li><p>The wait() method is provided by the Object class in Java. This method is used for inter-thread communication in Java. The java.lang.Object.wait() is used to pause the current thread, and wait() until another thread does not call the notify() or notifyAll() method.</p>
+</li>
+<li><p>The notify() is used to unblock one waiting thread.</p>
+</li>
+<li><p>The notifyAll() method is used to unblock all the threads in waiting state.</p>
+</li>
+</ul>
+<h4 id="Volatile-and-Synchronized"><a href="#Volatile-and-Synchronized" class="headerlink" title="Volatile and Synchronized"></a>Volatile and Synchronized</h4><ul>
+<li><strong>Volatile</strong> keyword is used in multithreaded programming to achieve the thread safety, as a change in one volatile variable is visible to all other threads so one variable can used by one thread at a time.</li>
+<li><strong>Synchronized</strong> can be used to perform synchronization on any specific resource of the method. Only one thread at a time can execute on a particular resource, and all other threads which attempt to enter the synchronized block are blocked.</li>
+</ul>
+<h4 id="What-is-Garbage-Collection"><a href="#What-is-Garbage-Collection" class="headerlink" title="What is Garbage Collection?"></a>What is Garbage Collection?</h4><ul>
+<li><strong>Garbage</strong> means unreferenced objects.</li>
+<li>Garbage Collection is process of reclaiming the runtime unused memory automatically. In other words, it’s a way to destory the unused objects.</li>
+</ul>
+<h4 id="Serialization-and-deserialization"><a href="#Serialization-and-deserialization" class="headerlink" title="Serialization and deserialization"></a>Serialization and deserialization</h4><ul>
+<li><strong>Serialization</strong> in Java is a mechanism of writing the state of an object into a byte stream. It is used primarily in Hibernate, RMI, JPA, EJB and JMS technologies. It is mainly used to travel object’s state on the network. It is helpful when you require to save the state of a program to storage such as the file. </li>
+<li>At a later point of time, the content of this file can be restored using deserialization. It is also required to implement RMI(Remote Method Invocation). With the help of RMI, it is possible to <strong>invoke the method of a Java object on one machine to another machine</strong>.</li>
+<li><strong>Deserialization</strong> is the process of reconstructing the object from the serialized state. It is the reverse operation of serialization. An objectInputStream deserializes objects and primitive date written using an ObjectOutputStream.</li>
+</ul>
+<h3 id="Thread-Life-Cycle-in-Java"><a href="#Thread-Life-Cycle-in-Java" class="headerlink" title="Thread Life Cycle in Java"></a>Thread Life Cycle in Java</h3><ul>
+<li><strong>New:</strong> When we create a new Thread object using new operator, thread state is New Thread, but the thread is not alive. Thread doesn’t start until we call the start() method.</li>
+<li><strong>Runnable:</strong> When we call <strong>start() function</strong> on Thread object, its state is changed to Runnable. However, the thread is not yet selected by the thread scheduler.</li>
+<li><strong>Running:</strong> When thread is <strong>executing</strong>, its state is changed to Running. Thread scheduler picks one of the thread from the runnable thread pool and change its state to Running. Then CPU starts executing this thread. A thread can <strong>change state to Runnable, Dead or Blocked</strong> from running state depends on time slicing, thread completion of run() method or waiting for some resources.</li>
+<li><strong>Blocked/Waiting:</strong> A thread can be <strong>waiting for other thread to finish</strong> using thread join or it can be <strong>waiting for some resources to available</strong>. Once the thread wait state is over, its state is changed to Runnable and it’s moved back to runnable thread pool.</li>
+<li><strong>Dead:</strong> Once the thread <strong>finished executing</strong>, its state is changed to Dead and it’s considered to be not alive.</li>
+</ul>
+<h3 id="常见的同步方式？synchronized-CAS"><a href="#常见的同步方式？synchronized-CAS" class="headerlink" title="常见的同步方式？synchronized/CAS"></a>常见的同步方式？synchronized/CAS</h3><h3 id="线程池的创建方式？区别"><a href="#线程池的创建方式？区别" class="headerlink" title="线程池的创建方式？区别"></a>线程池的创建方式？区别</h3><h3 id="Hashcode为什么出现、是什么、equals关系"><a href="#Hashcode为什么出现、是什么、equals关系" class="headerlink" title="Hashcode为什么出现、是什么、equals关系"></a>Hashcode为什么出现、是什么、equals关系</h3><h3 id="设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计"><a href="#设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计" class="headerlink" title="设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计"></a>设计模式有生产者消费者、工厂模式、单例模式（3中实现，为什么双验证），你会怎么设计</h3><h3 id="反射-泛型底层是怎么实现的"><a href="#反射-泛型底层是怎么实现的" class="headerlink" title="反射+泛型底层是怎么实现的"></a>反射+泛型底层是怎么实现的</h3><h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h3><h3 id="Anonymous-inner-classes"><a href="#Anonymous-inner-classes" class="headerlink" title="Anonymous inner classes"></a>Anonymous inner classes</h3><ul>
+<li>Anonymous inner classes are the classes that are automatically declared and instantiated within an expression. We cannot apply different access modifiers to them. Anonymous class <strong>cannot be static, and cannot define any static fields, method, or class</strong>. In other words, we can say that it a class without the name and can have only one object that is created by its definition.</li>
+</ul>
+<h3 id="封装，继承，多态"><a href="#封装，继承，多态" class="headerlink" title="封装，继承，多态"></a>封装，继承，多态</h3><h3 id="多态，书写一个多态的例子，多态具体情况判断"><a href="#多态，书写一个多态的例子，多态具体情况判断" class="headerlink" title="多态，书写一个多态的例子，多态具体情况判断"></a>多态，书写一个多态的例子，多态具体情况判断</h3><h3 id="异常具体情况判断"><a href="#异常具体情况判断" class="headerlink" title="异常具体情况判断"></a>异常具体情况判断</h3><h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3><h3 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 懒汉式-线程不安全</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getUniqueInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 饿汉式-线程安全</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton uniqueInstance =  <span class="keyword">new</span> Singleton();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getUniqueInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 懒汉式-线程安全</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getUniqueInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 双重校验锁-线程安全</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getUniqueInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(Singleton<span class="class">.<span class="keyword">class</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -738,160 +978,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/10/nim-little-game/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/10/nim-little-game/" class="post-title-link" itemprop="url">LC-3 Nim</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-10 22:26:23" itemprop="dateCreated datePublished" datetime="2020-06-10T22:26:23+08:00">2020-06-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-24 17:08:39" itemprop="dateModified" datetime="2020-06-24T17:08:39+08:00">2020-06-24</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="游戏背景："><a href="#游戏背景：" class="headerlink" title="游戏背景："></a>游戏背景：</h2><p>本次实验对Nim游戏做了一些小的改变，具体如下：游戏界面由三行组成，计数器类型为石子，其中A行包含3个石子，B行包含5个石子，C行包含8个石子。</p>
-<p>规则如下：</p>
-<ol>
-<li><p>每个玩家轮流从某一行中移除一个或多个石子。</p>
-</li>
-<li><p>一个玩家不能在一个回合中从多个行中移除石子。</p>
-</li>
-<li><p>当某个玩家从游戏界面上移除最后一个石子时，此时游戏结束，该玩家战败。</p>
-</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/10/nim-little-game/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/06/dynamic-memory-allocation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/06/dynamic-memory-allocation/" class="post-title-link" itemprop="url">Dynamic memory allocation</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-06 17:42:25 / Modified: 17:59:54" itemprop="dateCreated datePublished" datetime="2020-06-06T17:42:25+08:00">2020-06-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Dynamic-Memory-Management"><a href="#Dynamic-Memory-Management" class="headerlink" title="Dynamic Memory Management"></a>Dynamic Memory Management</h2><p>动态分区管理方式不将内存划分成几个区域，而把内存空间看作一个大的空闲区。当进程要求装入内存时，根据进程需要内存空间的大小查询内存各个空闲区，按首次适应，最佳适应或最坏适应算法，选择一个合适的空闲区，并按进程需求量划出一个分区装入该进程。</p>
-<p>进程执行完成后，它所占用的内存分区被收回，成为一个空闲区。如果该空闲区的相邻分区也是空闲区，则需要将相邻空闲区合并成一个空闲区。</p>
-<p>实现动态分区存储管理，主要需要解决以下问题：</p>
-<ul>
-<li>记录空闲区和内存分配区的数据结构Data Structure</li>
-<li>动态内存分配算法Memory Allocate</li>
-<li>动态内存回收算法Memory Free</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/06/dynamic-memory-allocation/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -961,7 +1047,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
