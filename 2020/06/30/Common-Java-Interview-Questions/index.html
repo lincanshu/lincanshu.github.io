@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Lincanshu">
 <meta property="og:description" content="Four References StrongReference: 程序代码之中普遍存在的引用赋值，无论如何情况下，只要强引用关系存在，GC就永远不会回收掉被引用的对象。Object obj &#x3D; new Object() SoftReference: 在系统将要发生OOM之前，会把这些对象列入回收范围内进行第二次回收。若这次回收之后还没有足够的内存，则会抛出内存溢出异常。 WeakReference">
 <meta property="article:published_time" content="2020-06-30T11:39:54.000Z">
-<meta property="article:modified_time" content="2020-07-10T08:43:25.712Z">
+<meta property="article:modified_time" content="2020-07-26T15:03:46.102Z">
 <meta property="article:author" content="lincanshu">
 <meta property="article:tag" content="interview">
 <meta name="twitter:card" content="summary">
@@ -195,7 +195,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-10 16:43:25" itemprop="dateModified" datetime="2020-07-10T16:43:25+08:00">2020-07-10</time>
+                <time title="Modified: 2020-07-26 23:03:46" itemprop="dateModified" datetime="2020-07-26T23:03:46+08:00">2020-07-26</time>
               </span>
 
           
@@ -215,6 +215,8 @@
 <li>WeakReference: 被弱引用关联的对象只能生存到下一次垃圾回收之前，when GC is working, whatever the memory is enough, these objects will be collected.</li>
 <li>PhantomReference: 一个对象是否有虚应用的存在，完全不影响survive time, 也无法通过虚引用来获得一个对象的instance。设置虚引用关联的唯一目的是该对象被回收时，将会收到一个系统通知。</li>
 </ul>
+<a id="more"></a>
+
 <h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><p>The final statement has a differnet meaning depending on its context.</p>
 <ul>
 <li>When applied to a variable (primitive): The value of the variable cannot change.</li>

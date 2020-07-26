@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Lincanshu">
 <meta property="og:description" content="Thread vs. Process: A process can be thought of as an instance of a program in execution. A process is an independent entity to which system resources (like CPU time and memory) are allocated. Each pr">
 <meta property="article:published_time" content="2020-07-01T03:14:51.000Z">
-<meta property="article:modified_time" content="2020-07-04T16:01:41.974Z">
+<meta property="article:modified_time" content="2020-07-26T15:03:52.896Z">
 <meta property="article:author" content="lincanshu">
 <meta property="article:tag" content="interview">
 <meta name="twitter:card" content="summary">
@@ -195,7 +195,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-05 00:01:41" itemprop="dateModified" datetime="2020-07-05T00:01:41+08:00">2020-07-05</time>
+                <time title="Modified: 2020-07-26 23:03:52" itemprop="dateModified" datetime="2020-07-26T23:03:52+08:00">2020-07-26</time>
               </span>
 
           
@@ -210,13 +210,12 @@
 
       
         <h3 id="Thread-vs-Process"><a href="#Thread-vs-Process" class="headerlink" title="Thread vs. Process:"></a>Thread vs. Process:</h3><ul>
-<li><p>A process can be thought of as <strong>an instance of a program in execution</strong>. A process is an independent entity to which system resources (like CPU time and memory) are allocated. Each process is executed in a separate address space, and one process cannot access the variables and data structures of another process. If a process wishes to access another process’ resources, inter-process communications have to be used. These include pipes, files, sockets, and other forms.</p>
-</li>
-<li><p>A thread exists within a process and shares the process’ resources (including it heap space). <strong>Multiple threads within the same process will share the same heap space.</strong> This is very different from process, which cannot directly access the memory of another process. Each thread still has its own registers and its own stack, but other threads can read and write the heap memory.</p>
-</li>
-<li><p>A thread is a particular execution path of a process. When one thread modifies a process resource, the change is immediately visible to sibling threads.</p>
-</li>
+<li>A process can be thought of as <strong>an instance of a program in execution</strong>. A process is an independent entity to which system resources (like CPU time and memory) are allocated. Each process is executed in a separate address space, and one process cannot access the variables and data structures of another process. If a process wishes to access another process’ resources, inter-process communications have to be used. These include pipes, files, sockets, and other forms.</li>
+<li>A thread exists within a process and shares the process’ resources (including it heap space). <strong>Multiple threads within the same process will share the same heap space.</strong> This is very different from process, which cannot directly access the memory of another process. Each thread still has its own registers and its own stack, but other threads can read and write the heap memory.</li>
+<li>A thread is a particular execution path of a process. When one thread modifies a process resource, the change is immediately visible to sibling threads.</li>
 </ul>
+<a id="more"></a>
+
 <h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><h3 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h3><h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><h3 id="计算机系统中断实现"><a href="#计算机系统中断实现" class="headerlink" title="计算机系统中断实现"></a>计算机系统中断实现</h3><h3 id="计算机系统的锁底层实现"><a href="#计算机系统的锁底层实现" class="headerlink" title="计算机系统的锁底层实现"></a>计算机系统的锁底层实现</h3><h3 id="多核CPU，多线程如何访问同个内存"><a href="#多核CPU，多线程如何访问同个内存" class="headerlink" title="多核CPU，多线程如何访问同个内存"></a>多核CPU，多线程如何访问同个内存</h3>
     </div>
 
