@@ -161,6 +161,300 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/PriorityQueue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lincanshu">
+      <meta itemprop="description" content="Do more, know more, be more!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lincanshu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/22/PriorityQueue/" class="post-title-link" itemprop="url">Priority Queue</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-22 22:25:15" itemprop="dateCreated datePublished" datetime="2020-07-22T22:25:15+08:00">2020-07-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-24 21:26:55" itemprop="dateModified" datetime="2020-07-24T21:26:55+08:00">2020-07-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Priority-queue-API"><a href="#Priority-queue-API" class="headerlink" title="Priority queue API"></a>Priority queue API</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MaxPQ</span>&lt;<span class="title">Key</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Key</span>&gt;&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// create an empty priority queue</span></span><br><span class="line">    MaxPQ();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// create a priority queue with given keys</span></span><br><span class="line">    MaxPQ(Key[] a);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// insert a key into the priority queue</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(Key v)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// return and remove the largest key</span></span><br><span class="line">    <span class="function">Key <span class="title">delMax</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// is the priority queue empty?</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// return the largest key</span></span><br><span class="line">    <span class="function">Key <span class="title">max</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// number of entries in the priority queue</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Priority-queue-unordered-array-implementation"><a href="#Priority-queue-unordered-array-implementation" class="headerlink" title="Priority queue: unordered array implementation"></a>Priority queue: unordered array implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnorderedMaxPQ</span>&lt;<span class="title">Key</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Key</span>&gt;&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Key[] pq;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> N;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UnorderedMaxPQ</span><span class="params">(<span class="keyword">int</span> capacity)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	pq = (Key[]) <span class="keyword">new</span> Comparable[capacity];	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="keyword">return</span> N == <span class="number">0</span>;	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Key x)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	pq[N++] = x;	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Key <span class="title">delMax</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</span><br><span class="line">            <span class="keyword">if</span> (less(max, i)) max = i;</span><br><span class="line">        exch(max, N-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> pq[--N];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Binary-heap-Java-implementation"><a href="#Binary-heap-Java-implementation" class="headerlink" title="Binary heap: Java implementation"></a>Binary heap: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MaxPQ</span>&lt;<span class="title">Key</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Key</span>&gt;&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Key[] pq;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> N;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MaxPQ</span><span class="params">(<span class="keyword">int</span> capacity)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        pq = (Key[]) <span class="keyword">new</span> Comparable[capacity+<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// PQ ops</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> N == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Key x)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	pq[++N] = x;</span><br><span class="line">        swim(x);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delMax</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	Key max = pq[<span class="number">1</span>];</span><br><span class="line">        exch(<span class="number">1</span>, N--);</span><br><span class="line">        sink(<span class="number">1</span>);</span><br><span class="line">        pq[N+<span class="number">1</span>] = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// heap helper functions</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swim</span><span class="params">(<span class="keyword">int</span> k)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (k &gt; <span class="number">1</span> &amp;&amp; less(k/<span class="number">2</span>, k)) </span><br><span class="line">        &#123;</span><br><span class="line">            exch(k, k/<span class="number">2</span>);</span><br><span class="line">            k = k/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sink</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="number">2</span>*k &lt;= N)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">2</span>*k;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; N &amp;&amp; less(j, j+<span class="number">1</span>)) j++;</span><br><span class="line">            <span class="keyword">if</span> (!less(k, j)) <span class="keyword">break</span>;</span><br><span class="line">            exch(k, j);</span><br><span class="line">            k = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// array helper functions</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> pq[i].compareTo(pq[j]) &lt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Key t = pq[i];</span><br><span class="line">        pq[i] = pq[j];</span><br><span class="line">        pq[j] = t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Immutability-implementing-in-Java"><a href="#Immutability-implementing-in-Java" class="headerlink" title="Immutability: implementing in Java"></a>Immutability: implementing in Java</h3><ul>
+<li>Classes should be immutable unless there’s a very good reason to make them mutable… If a class cannot be made immutable, you should still limit its mutability as much as possible.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Vector</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span>[] data;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Vector</span><span class="params">(<span class="keyword">double</span>[] data)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.N = data.length;</span><br><span class="line">        <span class="keyword">this</span>.data = <span class="keyword">new</span> <span class="keyword">double</span>[N];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">            <span class="keyword">this</span>.data[i] = data[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages"></a>Advantages</h4><ul>
+<li>Simplifies debugging.</li>
+<li>Safer in presence of hostile code.</li>
+<li>Simplifies concurrent programming.</li>
+<li>Safe to use as key in priority queue or symbol table.</li>
+</ul>
+<h4 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage."></a>Disadvantage.</h4><ul>
+<li>Must create new object for each data type value.</li>
+</ul>
+<h3 id="Heapsort-Java-implementation"><a href="#Heapsort-Java-implementation" class="headerlink" title="Heapsort: Java implementation"></a>Heapsort: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Heap</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = a.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = N/<span class="number">2</span>; k &gt;= <span class="number">1</span>; k--)</span><br><span class="line">            sink(a, k, N);</span><br><span class="line">        <span class="keyword">while</span> (N &gt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            exch(a, <span class="number">1</span>, N);</span><br><span class="line">            sink(a, <span class="number">1</span>, --N);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sink</span><span class="params">(Comparable[] a, <span class="keyword">int</span> k, <span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (k*<span class="number">2</span> &lt;= N)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = k*<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; N &amp;&amp; less(a, j, j+<span class="number">1</span>)) j++;</span><br><span class="line">            <span class="keyword">if</span> (!less(a, k, j)) <span class="keyword">break</span>;</span><br><span class="line">            exch(a, k, j);</span><br><span class="line">            k = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/Quicksort/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lincanshu">
+      <meta itemprop="description" content="Do more, know more, be more!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lincanshu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/20/Quicksort/" class="post-title-link" itemprop="url">Quicksort</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-20 22:46:23" itemprop="dateCreated datePublished" datetime="2020-07-20T22:46:23+08:00">2020-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-21 22:37:05" itemprop="dateModified" datetime="2020-07-21T22:37:05+08:00">2020-07-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Quicksort-Java-code-for-partitioning"><a href="#Quicksort-Java-code-for-partitioning" class="headerlink" title="Quicksort: Java code for partitioning"></a>Quicksort: Java code for partitioning</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = lo, j = hi + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (less(a[++i], a[lo]))</span><br><span class="line">            <span class="keyword">if</span> (i == hi) <span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (less(a[lo], a[--j]))</span><br><span class="line">            <span class="keyword">if</span> (j == lo) <span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (i &gt;= j) <span class="keyword">break</span>;</span><br><span class="line">        exch(a, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    exch(a, lo, j);</span><br><span class="line">    <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Quicksort-Java-implementation"><a href="#Quicksort-Java-implementation" class="headerlink" title="Quicksort: Java implementation"></a>Quicksort: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quick</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">/* has finished */</span>	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        StdRandom.shuffle(a);</span><br><span class="line">        sort(a, <span class="number">0</span>, a.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hi &lt;= lo) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> j = partition(a, lo, hi);</span><br><span class="line">        sort(a, lo, j-<span class="number">1</span>);</span><br><span class="line">        sort(a, j+<span class="number">1</span>, hi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Quicksort-practical-improvements"><a href="#Quicksort-practical-improvements" class="headerlink" title="Quicksort: practical improvements"></a>Quicksort: practical improvements</h3><ul>
+<li>Even quicksort has too much overhead for tiny subarrays.</li>
+<li>Cutoff to insertion sort for about 10 items.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hi &lt;= lo + CUTOFF - <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Insertion.sort(a, lo, hi);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> j = partition(a, lo, hi);</span><br><span class="line">    sort(a, lo, j-<span class="number">1</span>);</span><br><span class="line">    sort(a, j+<span class="number">1</span>, hi);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Best choice of pivot item = median.</li>
+<li>Estimate true median by taking median of sample.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hi &lt;= lo) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> m = medianOf3(a, lo, lo + (hi - lo)/<span class="number">2</span>, hi);</span><br><span class="line">    swap(a, lo, m);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> j = partition(a, lo, hi);</span><br><span class="line">    sort(a, lo, j-<span class="number">1</span>);</span><br><span class="line">    sort(a, j+<span class="number">1</span>, hi);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Quick-select"><a href="#Quick-select" class="headerlink" title="Quick-select"></a>Quick-select</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Comparable <span class="title">select</span><span class="params">(Comparable[] a, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    StdRandom.shuffle(a);</span><br><span class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>, hi = a.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (hi &gt; lo) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> j = partition(a, lo, hi);</span><br><span class="line">        <span class="keyword">if</span> (j &lt; k) lo = j + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; k) hi = j - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> a[k];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-way-quicksort-Java-implementation"><a href="#3-way-quicksort-Java-implementation" class="headerlink" title="3-way quicksort: Java implementation"></a>3-way quicksort: Java implementation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (hi &lt;= lo) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> lt = lo, gt = hi;</span><br><span class="line">    Comparable v = a[lo];</span><br><span class="line">    <span class="keyword">int</span> i = lo;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= gt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> cmp = a[i].compareTo(v);</span><br><span class="line">        <span class="keyword">if</span> (cmp &lt; <span class="number">0</span>) exch(a, lt++, i++);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (cmp &gt; <span class="number">0</span>) exch(a, i, gt--);</span><br><span class="line">        <span class="keyword">else</span> i++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    sort(a, lo, lt - <span class="number">1</span>);</span><br><span class="line">    sort(a, gt + <span class="number">1</span>, hi);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/Spring-boot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lincanshu">
+      <meta itemprop="description" content="Do more, know more, be more!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lincanshu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/20/Spring-boot/" class="post-title-link" itemprop="url">Spring boot</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-20 21:19:15" itemprop="dateCreated datePublished" datetime="2020-07-20T21:19:15+08:00">2020-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-24 15:57:57" itemprop="dateModified" datetime="2020-07-24T15:57:57+08:00">2020-07-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Three-ways-to-run"><a href="#Three-ways-to-run" class="headerlink" title="Three ways to run:"></a>Three ways to run:</h3><ul>
+<li>Using “run” in vs code</li>
+<li>using maven to run</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>using maven to compile the project then using java to run</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mvn install</span><br><span class="line"><span class="built_in">cd</span> target</span><br><span class="line">java -jar filename</span><br></pre></td></tr></table></figure>
+
+<h3 id="属性配置"><a href="#属性配置" class="headerlink" title="属性配置"></a>属性配置</h3><table>
+<thead>
+<tr>
+<th>@Value</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Component</td>
+<td></td>
+</tr>
+<tr>
+<td>@ConfigurationProperties</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Controller的使用"><a href="#Controller的使用" class="headerlink" title="Controller的使用"></a>Controller的使用</h3><table>
+<thead>
+<tr>
+<th>@Controller</th>
+<th>处理http请求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@RestController</td>
+<td>Spring4之后新加的注解，原来返回json需要@ResponseBody配合@Controller</td>
+</tr>
+<tr>
+<td>@RequestMapping</td>
+<td>配置url映射</td>
+</tr>
+<tr>
+<td>@PathVariable</td>
+<td>获取url中的数据</td>
+</tr>
+<tr>
+<td>@RequestParam</td>
+<td>获取请求参数的值</td>
+</tr>
+<tr>
+<td>@GetMapping</td>
+<td>组合注解</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package -Dmaven.test.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/07/Mergesort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -749,235 +1043,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/GCC-and-make/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/29/GCC-and-make/" class="post-title-link" itemprop="url">GCC and make -- the useful tools</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-29 21:49:50 / Modified: 23:33:54" itemprop="dateCreated datePublished" datetime="2020-06-29T21:49:50+08:00">2020-06-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Compile-Link-a-Simple-C-Program-hello-c"><a href="#Compile-Link-a-Simple-C-Program-hello-c" class="headerlink" title="Compile/Link a Simple C Program - hello.c"></a>Compile/Link a Simple C Program - hello.c</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello, world\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>use gcc to compile the hello.c:</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Compile and link source file hello.c into executable a.out</span><br><span class="line">~&gt; gcc hello.c</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>To run the program:</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// add executable file-mode "+x"</span><br><span class="line">~&gt; chmod a+x a.out</span><br><span class="line">// In Bash Shell - include the current path (./)</span><br><span class="line">~&gt; ./a.out</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>To specify the output filename, use -o option:</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~&gt; gcc -o hello hello.c</span><br><span class="line">~&gt; chmod a+x hello</span><br><span class="line">~&gt; ./hello</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/29/GCC-and-make/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/24/interrupt-experiment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/24/interrupt-experiment/" class="post-title-link" itemprop="url">LC-3 interrupt</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-24 17:07:06" itemprop="dateCreated datePublished" datetime="2020-06-24T17:07:06+08:00">2020-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-27 19:03:00" itemprop="dateModified" datetime="2020-06-27T19:03:00+08:00">2020-06-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Interrupt-Concept"><a href="#Interrupt-Concept" class="headerlink" title="Interrupt Concept"></a>Interrupt Concept</h2><p>计算机领域中，中断就是由软硬件向处理器发送信号，处理器收到并立即处理该信号表示事件的过程。中断会暂停当前处理器正在执行的流程，然后将处理器切换到高优先级。处理器会暂存当前任务的状态，然后执行一小段称为<strong>中断处理程序</strong>(ISR)的代码来处理该事件。中断是暂时的，中断处理程序执行结束后，处理器会回到之前任务暂存的状态继续执行，中断分为两种类型：硬件中断和软件中断。</p>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><ul>
-<li>The program will output two lines all the time such as below:</li>
-<li>If you type something, the program stops, until you type ENTER, then the program will output the character before ‘\n’ for ten times:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS      </span><br><span class="line"></span><br><span class="line">ICS   ICS   ICS   ICS   ICS   ICS    </span><br><span class="line"></span><br><span class="line">  ICS   ICS   ICS   ICS   ICS</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/24/interrupt-experiment/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/13/something-to-say/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lincanshu">
-      <meta itemprop="description" content="Do more, know more, be more!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lincanshu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/13/something-to-say/" class="post-title-link" itemprop="url">Something to say</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-13 23:35:40" itemprop="dateCreated datePublished" datetime="2020-06-13T23:35:40+08:00">2020-06-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-05 17:41:32" itemprop="dateModified" datetime="2020-07-05T17:41:32+08:00">2020-07-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>A programmer progress fast without girlfriend.</li>
-<li>Less is more.</li>
-<li>Imagination is more important than knowledge.</li>
-<li>If you spend time learning to use tools, you will save even more time when writing and debugging code.</li>
-<li>Don’t use a library until you understand its API.</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1047,12 +1112,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
